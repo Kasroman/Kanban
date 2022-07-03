@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban</title>
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./css/style.css">
+
+    <script defer src="./js/main.js" type="module"></script>
+</head>
+<body class="bg-secondary">
+    <main class="m-5">
+        <section class="d-flex justify-content-evenly">
+            <div class="bg-light d-flex p-3 rounded-3">
+                <div class="m-2">
+                    <h2 class="text-dark text-center mb-2">Add note</h2>
+                    <div class="d-flex flex-column form-control">
+                        <label for="title">Title</label>
+                        <input type="text" name="title" id="title">
+                        <label for="content">Content</label>
+                        <input type="text" name="content" id="content">
+                        <label for="content">Date butoir</label>
+                        <input type="datetime-local" name="butoir" id="butoir">
+                        <button id="submit-btn" class="btn btn-primary mt-2">Valider</button>
+                    </div>
+                </div>
+                <div class="d-flex flex-column align-items-center justify-content-between m-2">
+                    <h2 class="text-dark text-center mb-2">Delete note</h2>
+                    <img id="trash" class="bg-white rounded-3" src="./img/trash.svg" alt="">
+                </div>
+            </div>
+            <div class="bg-light rounded-3 p-3 d-flex flex-column justify-content-around">
+                <form id="upload" class="form-control d-flex flex-column">
+                    <label class="m-2" for="file">Importer données</label>
+                    <input class="m-2" type="file" name="file" id="file">
+                    <button id="import" class="btn btn-success m-2">Importer</button>
+                </form>
+                <div class="form-control d-flex justify-content-around align-items-center">
+                    <label for="export">Exporter données</label>
+                    <a id="export" class="btn btn-secondary m-2">Exporter</a>
+                </div>
+            </div>
+        </section>
+        <section class="d-flex justify-content-around mt-5">
+            <div class="p-3 section">
+                <h2 class="text-white text-center">TO DO</h2>
+                <div id="todo" class="bg-light p-3 rounded-3 h-100"></div>
+            </div>
+
+            <div class="p-3 section">
+                <h2 class="text-white text-center">DONE</h2>
+                <div id="done" class="bg-light p-3 rounded-3 h-100"></div>
+            </div>
+
+            <div class="p-3 section">
+                <h2 class="text-white text-center">VERIFIED</h2>
+                <div id="verified" class="bg-light p-3 rounded-3 h-100"></div>
+            </div>
+        </section>
+
+        <section class="d-none modale-section d-flex align-items-center justify-content-center">
+            <div class="modale bg-light rounded-5 d-flex justify-content-between">
+                <article class="d-flex flex-column justify-content-center align-items-center ms-5">
+                    <h2 class="m-2 text-danger">Supprimer</h2>
+                    <p class="m-2">Êtes-vous sur de vouloir supprimer la note ?</p>
+                    <button id="delete-btn" class="btn btn-danger m-2">Supprimer</button>
+                </article>
+                <div class="modale-close mx-3 mt-2 cursor-pointer">X</div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
